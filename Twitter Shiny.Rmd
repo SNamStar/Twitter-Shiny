@@ -20,6 +20,18 @@ library('DT') ;
 
 This R Markdown document is made interactive using Shiny to demonstrate my abilities to make interactive data visualizations.
 
+```{r load data, include=FALSE}
+tweets <- search_tweets(q = "#rstats", 
+                        n = 16000,
+                        include_rts = FALSE,
+                        `-filter` = "replies") #%>%
+  #mutate(favorite_count = as.numeric(favorite_count), 
+         #retweet_count = as.numeric(retweet_count))
+         
+                        
+user_timeline  <- get_timeline("RLadiesSeattle", n = 900)
+```
+
 This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
 
 To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
