@@ -37,3 +37,10 @@ user_timeline  <- get_timeline("RLadiesSeattle", n = 900)
 ### Recent Rstats tweets
 
 ### Tweets from @RLadiesSeattle
+
+```{r tweets, echo=FALSE}
+inputPanel(
+  selectInput("tweetlang", label = "Language of tweets:",
+              choices = unique(tweets$lang), selected = "en", multiple = TRUE)
+)
+```
