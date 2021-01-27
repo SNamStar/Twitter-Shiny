@@ -52,4 +52,10 @@ renderPlot({
        caption = "Data collected from Twitter's REST API via rtweet") + 
     theme_minimal()
 })
+
+rendertable({
+  tweets %>%
+    filter(lang %in% input$tweeetlang) %>%
+    select(screen_name,text,lang,favorite_count,retweet_count)
+})
 ```
