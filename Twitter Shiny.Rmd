@@ -59,3 +59,15 @@ rendertable({
     select(screen_name,text,lang,favorite_count,retweet_count)
 })
 ```
+
+### Tweets from @RLadiesSeattle
+The plots below show the top emojis used, a wordle of terms, and a time series of tweets by @RLadiesSeattle. 
+The time series can be plotted with different sources to see when different devices were used to tweet.
+
+#### Time series plot of tweets
+```{r user, echo=FALSE}
+inputpanel(
+  selecinput("tweetsource", label = "Source of Tweets:",
+             choices = unique(user_timeline$source), selected=unique(user_timeline$source), multiple = TRUE)
+)
+```
